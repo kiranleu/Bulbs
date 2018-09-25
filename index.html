@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder = "Enter your name">
+    
+    <button onClick="popup()"> Submit name!</button>
+    <script>
+       function popup() {
+          let inputBox = document.getElementById("nameInput");
+          let nameValue = inputBox.value;
+          
+          alert ("Hi there, " + nameValue);
+           
+       }
+       
+    </script>
+</body>
+</html>

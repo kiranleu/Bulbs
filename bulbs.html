@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .darkness {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+
+        }
+
+        .light {
+            background-color: lemonchiffon;
+            color: blue;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body id="mainContent" class="darkness">
+
+    <div class="container-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <div>
+                    <img id="lightBulb" src="img/bulboff.gif" width="150px">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <img id="lightBulb1" src="img/bulboff.gif" width="150px">
+                </div>
+
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <img id="lightBulb2" src="img/bulboff.gif" width="150px">
+                </div>
+            </div>
+        </div>
+        </br>
+
+        <div class="container-center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div>
+                        <img id="switch" src="img/switch_off.png" width="100">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div>
+                        <img id="switch1" src="img/switch_off.png" width="100">
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div>
+                        <img id="switch2" src="img/switch_off.png" width="100">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+    <div id="status"></div>
+
+    <script>
+        $("#switch1").click(function() { //Jquery click handler. Means each click Jquery will fire it.
+            if ($("#switch1").attr("src") == "img/switch_off.png") {
+                $("#switch1").attr("src", "img/switch_on.png")
+                bulbon1();
+            }
+            else {
+                $("#switch1").attr("src", "img/switch_off.png");
+                bulboff1();
+            }
+            
+        });
+
+        function bulbon1() {
+            $("#lightBulb1").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2> It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+
+
+        }
+
+        function bulboff1() {
+            $("#lightBulb1").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2 It's too dark!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+
+        $("#switch2").click(function() { //Jquery click handler. Means each click Jquery will fire it.
+            if ($("#switch2").attr("src") == "img/switch_off.png") {
+                $("#switch2").attr("src", "img/switch_on.png")
+                bulbon2();
+            }
+            else {
+                $("#switch2").attr("src", "img/switch_off.png");
+                bulboff2();
+            }
+            
+        });
+
+        function bulbon2() {
+            $("#lightBulb2").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2> It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+
+
+        }
+
+        function bulboff2() {
+            $("#lightBulb2").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2 It's too dark!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+
+        $("#switch2").click(function() { //Jquery click handler. Means each click Jquery will fire it.
+            if ($("#switch2").attr("src") == "img/switch_off.png") {
+                $("#switch2").attr("src", "img/switch_on.png")
+                bulbon2();
+            }
+            else {
+                $("#switch1").attr("src", "img/switch_off.png");
+                bulboff2();
+            }
+            
+        });
+
+
+
+        function bulbon() {
+            $("#lightBulb").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2> It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+
+
+        }
+
+        function bulboff() {
+            $("#lightBulb").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2 It's too dark!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+        $("#switch").click(function() { //Jquery click handler. Means each click Jquery will fire it.
+            if ($("#switch").attr("src") == "img/switch_off.png") {
+                $("#switch").attr("src", "img/switch_on.png")
+                bulbon();
+            }
+            else {
+                $("#switch").attr("src", "img/switch_off.png");
+                bulboff();
+            }
+        });
+    </script>
+    <!--       /* Your challenge is to modify the bulbon() and bulboff()-->
+    <!--   functions so that the innerHTML of the status div changes.-->
+    <!--   When the light is off, the div should contain a h2 with the-->
+    <!--   text: "It's dark!!"-->
+    <!--   When the light is on, the div should contain a h2 with the-->
+    <!--   text: "It's too bright!!"-->
+    <!--*/-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
